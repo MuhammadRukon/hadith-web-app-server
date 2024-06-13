@@ -7,7 +7,7 @@ const port = Number(process.env.PORT) || 4000;
 const main = async () => {
 
   await connectDb();
-  await seedHadithBooks();
+  // await seedHadithBooks(); //seed data
   app.listen(port, () => {
     console.log(`server running on port ${port}`);
   });
