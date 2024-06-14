@@ -65,7 +65,7 @@ const seedHadithBooks = async () => {
   ];
 
   try {
-    // await HadithBook.deleteMany(); //deletes all existing data
+    await HadithBook.deleteMany(); //deletes all existing data
     // await HadithBook.insertMany(hadithBooks); //inserts default data
     console.log("Hadith books seeded successfully");
   } catch (error) {
