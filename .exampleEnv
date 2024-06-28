@@ -8,3 +8,5 @@ DB_PASSWORD_PROD= "your pass"
 
 PORT = "5000"
 ENVIROMENT="development"
+LOCAL_CLIENT = "http://localhost:5173"
+REMOVE_CLIENT= "https://hadithkhujo.netlify.app"
