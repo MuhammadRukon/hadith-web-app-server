@@ -1,0 +1,10 @@
+DB_URI="your mongodb uri"
+DB_NAME="your dbname"
+DB_USERNAME_DEV= "your db username"
+DB_PASSWORD_DEV= "your pass"
+
+DB_USERNAME_PROD="your db username"
+DB_PASSWORD_PROD= "your pass"
+
+PORT = "5000"
+ENVIROMENT="development"

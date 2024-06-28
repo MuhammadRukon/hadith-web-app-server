@@ -1,6 +1,6 @@
 const app = require("./src/app");
 const connectDb = require("./src/db/connectDb");
-const seedHadithBooks = require("./src/db/seedHadithBooks");
+// const seedHadithBooks = require("./src/db/seedHadithBooks");
 require("dotenv").config();
 const port = Number(process.env.PORT) || 4000;
 
