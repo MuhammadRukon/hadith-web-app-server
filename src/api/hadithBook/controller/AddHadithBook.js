@@ -11,9 +11,9 @@ const addHadithBook = async (req, res) => {
     };
     const newHadithBook = new HadithBook(data);
     const response = await newHadithBook.save();
-    res.send(response);
+    res.send({status:200, response:response});
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ status:500, message: err.message || err.errmsg });
   }
 };
 
