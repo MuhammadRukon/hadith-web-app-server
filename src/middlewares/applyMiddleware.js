@@ -6,7 +6,8 @@ const applyMiddleware = (express, app) => {
   app.use(cookieParser());
   app.use(
     cors({
-      origin: "http://localhost:5173",
+      origin: [process.env.LOCAL_CLIENT, process.env.REMOTE_CLIENT],
+      // origin: ["http://localhost:5173"],
       credentials: true,
     })
   );
