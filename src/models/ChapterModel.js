@@ -1,12 +1,15 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose');
+
 
 const chapterSchema = new Schema({
   name: {
-    bn: { type: String, Required: true },
-    en: { type: String, Required: true },
-  }
+    bn: { type: String, required: true },
+    en: { type: String, required: true },
+  },
+  book_id: { type: Schema.Types.ObjectId, ref: 'Book', required: true },
 });
 
-const chapter = model("chapter", chapterSchema);
 
-module.exports = {chapter, chapterSchema};
+const Chapter = model('Chapter', chapterSchema);
+
+module.exports = Chapter;

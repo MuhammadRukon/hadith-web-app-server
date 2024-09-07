@@ -4,7 +4,6 @@ const hadithSchema = new Schema({
   text: {
     bn: { type: String, Required: true },
     en: { type: String, Required: true },
-    ar: { type: String, Required: true },
   },
   authenticity: {
     bn: { type: String, Required: true },
@@ -14,10 +13,12 @@ const hadithSchema = new Schema({
     bn: { type: String, Required: true },
     en: { type: String, Required: true },
   },
-  chapter_id:{type: String, Required:true},
-  book_id:{type:String, Required:true}
+  colorCode: { type: String, Required: true },
+  chapter_id: { type: String, Required: true },
+  book_id: { type: String, Required: true },
+  subject_id: { type: String, Required: true },
 });
 
-const hadithModel = model("hadith", hadithSchema);
+const Hadith = model("hadith", hadithSchema);
 
-module.exports = {hadithModel, hadithSchema};
+module.exports = { Hadith, hadithSchema };

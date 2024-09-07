@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const bookSchema = new Schema({
+const subjectSchema = new Schema({
   name: {
     bn: { type: String, Required: true, Unique: true },
     en: { type: String, Required: true, Unique: true },
@@ -9,8 +9,8 @@ const bookSchema = new Schema({
     en: { type: Number, default: 0 },
     bn: { type: String, default: "0" },
   },
-  chapters: [{ type: Schema.Types.ObjectId, ref: "Chapter" }],
 });
-const book = model("book", bookSchema);
 
-module.exports = book;
+const Subject = model("Subject", subjectSchema);
+
+module.exports = {Subject, subjectSchema};
