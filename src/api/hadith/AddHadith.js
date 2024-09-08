@@ -22,16 +22,17 @@ const convertBengaliToEnglish = (bengaliStr) => {
 const addHadith = async (req, res) => {
   const data = req.body;
   if (
-    data.text.en == "" ||
-    data.text.bn == "" ||
-    data.narrator.en == "" ||
-    data.narrator.bn == "" ||
-    data.authenticity.en == "" ||
-    data.authenticity.bn == "" ||
-    data.chapter_id == "" ||
-    data.book_id == "" ||
-    data.subject_id == "" ||
-    data.colorCode == ""
+    !data.text.en ||
+    !data.text.bn ||
+    !data.text.ar ||
+    !data.narrator.en ||
+    !data.narrator.bn ||
+    !data.authenticity.en ||
+    !data.authenticity.bn ||
+    !data.chapter_id ||
+    !data.book_id ||
+    !data.subject_id ||
+    !data.colorCode
   ) {
     return res.status(400).send({ message: "Empty fields" });
   }
@@ -54,7 +55,6 @@ const addHadith = async (req, res) => {
         parseInt(hadithRangeBnEnglish, 10) + 1
       ).toLocaleString("bn");
 
-      
       await book.findByIdAndUpdate(
         data.book_id,
         {
@@ -64,15 +64,15 @@ const addHadith = async (req, res) => {
         { new: true }
       );
 
-     const responseSubject =  await Subject.findByIdAndUpdate(
-      data.subject_id,
-      {
-        $inc: { "hadith_range.en": 1 },
-        "hadith_range.bn": newHadithRangeBn,
-      },
-      { new: true }
-    )
-    console.log(responseSubject, "response subject");
+      const responseSubject = await Subject.findByIdAndUpdate(
+        data.subject_id,
+        {
+          $inc: { "hadith_range.en": 1 },
+          "hadith_range.bn": newHadithRangeBn,
+        },
+        { new: true }
+      );
+      console.log(responseSubject, "response subject");
     }
 
     res.send({ status: 200, response });
