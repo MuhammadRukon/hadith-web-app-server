@@ -2,7 +2,6 @@ const { Subject } = require("../../models/subjectModel");
 
 const deleteSubject = async (req, res) => {
   const { id } = req.params;
-  console.log(id, "delete subject");
   try {
     //Delete book
     await Subject.findByIdAndDelete(id);

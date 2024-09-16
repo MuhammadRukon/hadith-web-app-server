@@ -4,7 +4,7 @@ const hadithSchema = new Schema({
   text: {
     bn: { type: String, Required: true },
     en: { type: String, Required: true },
-    ar:{ type: String, Required: true },
+    ar: { type: String, Required: true },
   },
   authenticity: {
     bn: { type: String, Required: true },

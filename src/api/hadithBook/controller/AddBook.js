@@ -11,9 +11,9 @@ const addBook = async (req, res) => {
     };
     const newBook = new book(data);
     const response = await newBook.save();
-    res.send({status:200, response:response});
+    res.send({ status: 200, response: response });
   } catch (err) {
-    res.status(500).json({ status:500, message: err.message || err.errmsg });
+    res.status(500).json({ status: 500, message: err.message || err.errmsg });
   }
 };
 

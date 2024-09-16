@@ -17,12 +17,10 @@ const addChapter = async (req, res) => {
     );
 
     if (chapterExists) {
-      return res
-        .status(400)
-        .json({
-          status: 400,
-          message: "Chapter with this name already exists in this book.",
-        });
+      return res.status(400).json({
+        status: 400,
+        message: "Chapter with this name already exists in this book.",
+      });
     }
 
     const newChapter = await Chapter.create({ name, book_id });

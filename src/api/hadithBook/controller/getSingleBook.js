@@ -1,7 +1,6 @@
 const book = require("../../../models/bookModel");
 
 const getSingleBook = async (req, res) => {
-  console.log(req.params, "get single book");
   try {
     const books = await book.find();
     res.json(books);
