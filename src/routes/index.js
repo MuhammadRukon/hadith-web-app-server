@@ -8,10 +8,10 @@ const getHadith = require("../api/hadith/GetHadith");
 const getSubjects = require("../api/subject/getSubjects");
 const addSubject = require("../api/subject/addSubject");
 const getChapters = require("../api/chapter/getChapters");
-const delelteHadith = require("../api/hadith/DeleteHadith");
 const deleteChapter = require("../api/chapter/deleteChapter");
 const deleteBook = require("../api/hadithBook/controller/deleteBook");
 const deleteSubject = require("../api/subject/deleteSubject");
+const deleteHadith = require("../api/hadith/deleteHadith");
 
 const router = express.Router();
 
@@ -26,6 +26,6 @@ router.route("/subjects").get(getSubjects).post(addSubject);
 router.route("/subjects/:id").delete(deleteSubject);
 
 router.route("/hadiths").get(getHadith).post(addHadith);
-router.route("/hadiths/:id").delete(delelteHadith);
+router.route("/hadiths/:id").delete(deleteHadith);
 
 module.exports = router;
