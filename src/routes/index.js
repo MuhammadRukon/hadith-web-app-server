@@ -12,6 +12,14 @@ const deleteChapter = require("../api/chapter/deleteChapter");
 const deleteBook = require("../api/hadithBook/controller/deleteBook");
 const deleteSubject = require("../api/subject/deleteSubject");
 const deleteHadith = require("../api/hadith/deleteHadith");
+const addUser = require("../api/user/addUser");
+const deleteUser = require("../api/user/deleteUser");
+const getUsers = require("../api/user/getUsers");
+const getSingleUser = require("../api/user/getSingleUser");
+const addBookmark = require("../api/bookmark/addBookmark");
+const getBookmarks = require("../api/bookmark/getBookmarks");
+const deleteBookmark = require("../api/bookmark/deleteBookmark");
+const getSearchedHadith = require("../api/hadith/getSearchedHadith");
 
 const router = express.Router();
 
@@ -27,5 +35,13 @@ router.route("/subjects/:id").delete(deleteSubject);
 
 router.route("/hadiths").get(getHadith).post(addHadith);
 router.route("/hadiths/:id").delete(deleteHadith);
+
+router.route("/users").get(getUsers).post(addUser);
+router.route("/users/:id").get(getSingleUser).delete(deleteUser);
+
+router.route("/bookmarks").get(getBookmarks).post(addBookmark);
+router.route("/bookmarks/:email").get(getBookmarks).delete(deleteBookmark);
+
+router.get("/search-hadith", getSearchedHadith);
 
 module.exports = router;
