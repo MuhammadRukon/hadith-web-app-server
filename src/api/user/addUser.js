@@ -2,7 +2,6 @@ const User = require("../../models/userModel");
 
 const addUser = async (req, res) => {
   const data = req.body;
-  console.log(data, "data");
   try {
     const response = await User.create(data);
     res.send({ status: 200, response: response });

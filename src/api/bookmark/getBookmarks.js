@@ -7,7 +7,6 @@ const getBookmarks = async (req, res) => {
       "bookmarks"
     );
     res.send({ status: 200, response: bookmarks });
-    console.log(bookmarks, "bookmarks");
   } catch (err) {
     res.status(500).json({ status: 500, message: err.message || err.errmsg });
   }

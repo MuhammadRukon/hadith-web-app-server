@@ -4,7 +4,6 @@ const Chapter = require("../../models/ChapterModel");
 const addChapter = async (req, res) => {
   try {
     const { name, book_id } = req.body;
-    console.log(req.body);
 
     const hadithBook = await book
       .findById(book_id)

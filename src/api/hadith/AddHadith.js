@@ -72,7 +72,6 @@ const addHadith = async (req, res) => {
         },
         { new: true }
       );
-      console.log(responseSubject, "response subject");
     }
 
     res.send({ status: 200, response });
